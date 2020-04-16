@@ -1,0 +1,534 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Classes · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../function/function.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    cpp_primier
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../variables/Variables.html">
+            
+                <a href="../variables/Variables.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../function/function.html">
+            
+                <a href="../function/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="Classes.html">
+            
+                <a href="Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Classes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="71-&#x7C7B;&#x7684;&#x57FA;&#x672C;&#x5B9A;&#x4E49;">7.1 &#x7C7B;&#x7684;&#x57FA;&#x672C;&#x5B9A;&#x4E49;</h2>
+<h4 id="this&#x6307;&#x9488;"><code>this</code>&#x6307;&#x9488;</h4>
+<ul>
+<li>&#x6307;&#x9488;&#x672C;&#x8EAB;&#x662F;<code>const</code>&#x7684;</li>
+<li>&#x6307;&#x9488;&#x6307;&#x5411;&#x8BE5;&#x7C7B;&#x7684;&#x975E;const&#x7248;&#x672C;<h4 id="const&#x6210;&#x5458;&#x51FD;&#x6570;"><code>const</code>&#x6210;&#x5458;&#x51FD;&#x6570;</h4>
+</li>
+<li>&#x5BF9;&#x4E8E;<code>const</code>&#x6210;&#x5458;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x6240;&#x5728;&#x7684;object&#x662F;&#x53EA;&#x8BFB;&#x7684;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;<code>const</code>&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</li>
+</ul>
+<pre><code class="lang-C++"><span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">isbn</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;bookNo;
+}
+</code></pre>
+<ul>
+<li>&#x5F53;object&#x662F;<code>const</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EA;&#x80FD;&#x8C03;&#x7528;const&#x6210;&#x5458;&#x51FD;&#x6570;&#x3002;<h4 id="&#x7C7B;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;">&#x7C7B;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;</h4>
+</li>
+<li>&#x7F16;&#x8BD1;&#x5668;&#x5904;&#x7406;&#x7C7B;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x5904;&#x7406;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#xFF1B;&#x4E4B;&#x540E;&#x518D;&#x5904;&#x7406;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4F53;&#x5185;&#x90E8;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x56E0;&#x6B64;&#x6210;&#x5458;&#x7684;&#x5B9A;&#x4E49;&#x987A;&#x5E8F;&#x5BF9;&#x7ED3;&#x679C;&#x65E0;&#x4EFB;&#x4F55;&#x5F71;&#x54CD;&#x3002;</li>
+</ul>
+<h4 id="713-&#x5B9A;&#x4E49;&#x975E;&#x6210;&#x5458;&#x51FD;&#x6570;">7.1.3 &#x5B9A;&#x4E49;&#x975E;&#x6210;&#x5458;&#x51FD;&#x6570;</h4>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x7528;&#x4E8E;&#x8F85;&#x52A9;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;<code>add</code>,<code>read</code>&#x7B49;&#xFF0C;&#x867D;&#x7136;&#x5B83;&#x4EEC;&#x6982;&#x5FF5;&#x4E0A;&#x662F;&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x7C7B;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x4E00;&#x822C;&#x4E0E;&#x7C7B;&#x5B9A;&#x4E49;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#x3002;
+<code>read</code>&#x51FD;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-comment">// input transactions contain ISBN, number of copies sold, and sales price </span>
+<span class="hljs-function">istream &amp;<span class="hljs-title">read</span><span class="hljs-params">(istream &amp;is, Sales_data &amp;item)</span>
+</span>{
+  <span class="hljs-keyword">double</span> price = <span class="hljs-number">0</span>;
+  is &gt;&gt; item.bookNo &gt;&gt; item.units_sold &gt;&gt; price; 
+  item.revenue = price * item.units_sold;
+}
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4F7F;&#x7528;IO&#x6D41;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x4E4B;&#x540E;&#x4F1A;&#x6539;&#x53D8;IO&#x6D41;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x5019;IO&#x6D41;&#x4E0D;&#x80FD;&#x4E3A;<code>const</code>&#x7C7B;&#x578B;&#x3002;</p>
+</blockquote>
+<h3 id="714&#x6784;&#x9020;&#x51FD;&#x6570;&#x6982;&#x8FF0;">7.1.4&#x6784;&#x9020;&#x51FD;&#x6570;&#x6982;&#x8FF0;</h3>
+<ul>
+<li>&#x5F53;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>const</code>&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x65F6;&#xFF0C;&#x5728;&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x9636;&#x6BB5;&#x5B83;&#x4E0D;&#x662F;<code>const</code>&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x5B8C;&#x6210;&#x65F6;&#x624D;&#x662F;&#x3002;</li>
+<li>&#x6709;&#x7684;&#x7C7B;&#x4E0D;&#x80FD;&#x4F9D;&#x9760;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x5668;&#x3002;&#x5982;&#x679C;&#x7C7B;&#x4E2D;&#x6709;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x6216;&#x6307;&#x9488;&#xFF0C;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x503C;</li>
+<li><p>&#x53EA;&#x6709;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x6784;&#x9020;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x624D;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x6784;&#x9020;&#x5668;</p>
+</li>
+<li><p>&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x51FD;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x6709;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code>Sales_data() = default;
+</code></pre><h4 id="&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;-constructor-initializer-list">&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868; (constructor initializer list)</h4>
+<p>&#x5192;&#x53F7;&#x548C;&#x5927;&#x62EC;&#x53F7;&#x4E4B;&#x95F4;&#x7684;&#x90E8;&#x5206;&#x5C31;&#x662F;&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#xFF0C;&#x5217;&#x8868;&#x5185;&#x90E8;&#x662F;&#x6BCF;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x5316;&#x503C;&#xFF0C;&#x4E0D;&#x540C;&#x53D8;&#x91CF;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x3002;
+``` C++
+Sales_data(const std::string &amp;s): bookNo(s) { }</p>
+</li>
+</ul>
+<p>Sales_data(const std::string &amp;s, unsigned n, double p): 
+  bookNo(s), units_sold(n), revenue(p*n) { }</p>
+<pre><code>
+###7.1.5 Copy, Assignment, and Destruction
+&#x7C7B;&#x63A7;&#x5236;&#x7740;&#x81EA;&#x8EAB;&#x7684; &#x590D;&#x5236;, &#x8D4B;&#x503C;, &#x6790;&#x6784;.
+* &#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;,&#x7F16;&#x8BD1;&#x5668;&#x5C31;&#x4F1A;&#x81EA;&#x884C;&#x751F;&#x6210;&#x4E00;&#x4E2A;.
+  * &#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x7F16;&#x8BD1;&#x5668;&#x81EA;&#x5DF1;&#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x628A;&#x6240;&#x6709;&#x6210;&#x5458;&#x5206;&#x522B;&#x8FDB;&#x884C; &#x590D;&#x5236;/&#x8D4B;&#x503C;/&#x6790;&#x6784;.
+
+* &#x5728;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;, &#x4F8B;&#x5982;: &#x4E00;&#x4E2A;&#x7C7B;&#x5185;&#x90E8;&#x5305;&#x542B;&#x6709;&#x52A8;&#x6001;&#x5185;&#x5B58;&#x7BA1;&#x7406;.
+* &#x5BF9;&#x4E8E;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x662F;`Vector`&#x6216;&#x8005; `string`&#x7684;, &#x7F16;&#x8BD1;&#x5668;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x6B63;&#x786E;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;.
+
+## 7.2 &#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x548C;&#x5C01;&#x88C5;
+`public`&#x548C;`private`.
+* `public` &#x5B58;&#x50A8;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x63A5;&#x53E3;&#x51FD;&#x6570;.
+* `private` &#x5B58;&#x50A8;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;.
+
+&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;`class`&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;`struct`, &#x552F;&#x4E00;&#x533A;&#x522B;&#x662F;&#x9ED8;&#x8BA4;&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x7684;&#x4E0D;&#x540C;.
+* `struct`&#x9ED8;&#x8BA4;&#x4E3A;`public`
+* `class`&#x9ED8;&#x8BA4;&#x4E3A;`private`
+
+####&#x5C01;&#x88C5;&#x7684;&#x597D;&#x5904;
+* &#x7528;&#x6237;&#x4EE3;&#x7801;&#x4E0D;&#x4F1A;&#x5728;&#x4E0D;&#x7ECF;&#x610F;&#x95F4;&#x4FEE;&#x6539;&#x5185;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x72B6;&#x6001; (&#x4F8B;&#x5982;&#x4F20;&#x53C2;&#x6D45;&#x62F7;&#x8D1D;&#x95EE;&#x9898;)
+* &#x5C01;&#x88C5;&#x597D;&#x7684;&#x7C7B;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x6539;&#x53D8;&#x5916;&#x90E8;&#x63A5;&#x53E3;&#x7684;&#x72B6;&#x6001;&#x4E0B;&#x4FEE;&#x6539;&#x5185;&#x90E8;&#x903B;&#x8F91;&#x548C;&#x51FD;&#x6570;.
+
+### &#x53CB;&#x5143;&#x51FD;&#x6570;&#x548C;&#x53CB;&#x5143;&#x7C7B;
+&#x5173;&#x952E;&#x8BCD; `friend`
+
+&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x53CB;&#x5143;&#x7C7B;&#x6216;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;`private`&#x6210;&#x5458;.
+
+&#x5C06;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x53CB;&#x5143;&#x51FD;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x7C7B;&#x4E2D;&#x63D0;&#x524D;&#x7528;`friend`&#x5B9A;&#x4E49;, &#x5177;&#x4F53;&#x5982;&#x4E0B;:
+
+``` C++
+class Sales_data {
+  // friend declarations for nonmember Sales_data operations added
+  friend Sales_data add(const Sales_data&amp;, const Sales_data&amp;); 
+  friend std::istream &amp;read(std::istream&amp;, Sales_data&amp;);
+  friend std::ostream &amp;print(std::ostream&amp;, const Sales_data&amp;); // other members and access specifiers as before
+public:
+  Sales_data() = default;
+  Sales_data(const std::string &amp;s, unsigned n, double p):bookNo(s), units_sold(n), revenue(p*n) { } 
+  Sales_data(const std::string &amp;s): bookNo(s) { } 
+  Sales_data(std::istream&amp;);
+  std::string isbn() const { return bookNo; } 
+  Sales_data &amp;combine(const Sales_data&amp;);
+private:
+  std::string bookNo; unsigned units_sold = 0; double revenue = 0.0;
+};
+// declarations for nonmember parts of the Sales_data interface
+Sales_data add(const Sales_data&amp;, const Sales_data&amp;); 
+std::istream &amp;read(std::istream&amp;, Sales_data&amp;); 
+std::ostream &amp;print(std::ostream&amp;, const Sales_data&amp;);
+</code></pre><ul>
+<li>&#x53CB;&#x5143;&#x5B9A;&#x4E49;&#x5FC5;&#x987B;&#x5728;&#x7C7B;&#x4E4B;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;, &#x56E0;&#x4E3A;&#x5B83;&#x4E0D;&#x5C5E;&#x4E8E;<code>this</code>,&#x4E0D;&#x53D7;&#x5173;&#x952E;&#x8BCD;<code>public</code>&#x548C;<code>private</code>&#x7684;&#x5F71;&#x54CD;.</li>
+<li>&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x53CB;&#x5143;&#x7684;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x5FC5;&#x987B;&#x5728;<code>this</code>&#x4E4B;&#x5916;&#x5B9A;&#x4E49;.</li>
+</ul>
+<p>&#x53CB;&#x5143;<code>friends</code>&#x7684;&#x5B9A;&#x4E49;&#x4EC5;&#x4EC5;&#x662F;&#x5B9A;&#x4E49;&#x8BBF;&#x95EE;&#x63A7;&#x5236;, &#x4E0D;&#x662F;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6216;&#x8005;&#x7C7B;&#x672C;&#x8EAB;.</p>
+<h2 id="73-&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x7279;&#x5F81;">7.3 &#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x7279;&#x5F81;</h2>
+<h3 id="731-&#x7C7B;&#x6210;&#x5458;">7.3.1 &#x7C7B;&#x6210;&#x5458;</h3>
+<h4 id="&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x6210;&#x5458;">&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x6210;&#x5458;</h4>
+<p>&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>tyepdef</code>&#x6216;&#x7C7B;&#x578B;&#x5316;&#x540D;(type alias)&#x5B9A;&#x4E49;&#x5C40;&#x90E8;&#x7C7B;&#x578B;&#x540D;&#x79F0;.
+&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#x9075;&#x5FAA;&#x8BBF;&#x95EE;&#x63A7;&#x5236;, &#x5373;<code>public</code>&#x6216;<code>private</code>.</p>
+<ul>
+<li>&#x5982;&#x679C;&#x60F3;&#x8BA9;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x540D;&#x79F0;,&#x5C31;&#x628A;&#x5B83;&#x8BBE;&#x4E3A;<code>public</code>.</li>
+<li>&#x7531;&#x4E8E;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x5FC5;&#x987B;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x524D;&#x9762;,&#x56E0;&#x6B64;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;&#x4E00;&#x822C;&#x653E;&#x5728;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x5F00;&#x5934;.</li>
+</ul>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Screen {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>::size_type pos;
+  <span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+  <span class="hljs-keyword">using</span> pos = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>::size_type;
+<span class="hljs-keyword">private</span>:
+  pos cursor = <span class="hljs-number">0</span>;
+  pos height = <span class="hljs-number">0</span>, width = <span class="hljs-number">0</span>;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> contents;
+};
+</code></pre>
+<h4 id="&#x7C7B;&#x4E2D;&#x7684;&#x5185;&#x8054;&#x51FD;&#x6570;">&#x7C7B;&#x4E2D;&#x7684;&#x5185;&#x8054;&#x51FD;&#x6570;</h4>
+<p>&#x5728;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x5747;&#x4E3A;&#x5185;&#x8054;&#x51FD;&#x6570;,&#x5728;&#x7C7B;&#x5916;&#x9762;&#x5B9A;&#x4E49;&#x5185;&#x8054;&#x9700;&#x8981;&#x5728;&#x51FD;&#x6570;&#x524D;&#x9762;&#x6DFB;&#x52A0;<code>inline</code>&#x5173;&#x952E;&#x8BCD;.</p>
+<h4 id="&#x91CD;&#x8F7D;&#x6210;&#x5458;&#x51FD;&#x6570;">&#x91CD;&#x8F7D;&#x6210;&#x5458;&#x51FD;&#x6570;</h4>
+<p>&#x89C4;&#x5219;&#x4E0E;&#x666E;&#x901A;&#x51FD;&#x6570;&#x76F8;&#x540C;.</p>
+<h4 id="&#x53EF;&#x53D8;mutable&#x6570;&#x636E;&#x6210;&#x5458;">&#x53EF;&#x53D8;(<code>mutable</code>)&#x6570;&#x636E;&#x6210;&#x5458;</h4>
+<p>&#x5373;&#x4F7F;&#x7C7B;&#x81EA;&#x8EAB;&#x662F;const&#x7684;,<code>mutable</code>&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4F9D;&#x7136;&#x662F;&#x53EF;&#x53D8;&#x7684;, &#x5B83;&#x65E0;&#x8BBA;&#x4F55;&#x65F6;&#x90FD;&#x662F;&#x53D8;&#x91CF;, &#x5728;<code>const</code>&#x51FD;&#x6570;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x53D8;.</p>
+<p>&#x5B9A;&#x4E49;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Screen {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sone_func</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span></span>;
+<span class="hljs-keyword">private</span>:
+  <span class="hljs-keyword">mutable</span> <span class="hljs-keyword">size_t</span> access_ctr;
+};
+<span class="hljs-keyword">void</span> Screen::some_func() <span class="hljs-keyword">const</span>{
+  ++access_ctr;
+}
+</code></pre>
+<h4 id="&#x6210;&#x5458;&#x4E3A;&#x7C7B;&#x65F6;&#x7684;&#x521D;&#x59CB;&#x5316;">&#x6210;&#x5458;&#x4E3A;&#x7C7B;&#x65F6;&#x7684;&#x521D;&#x59CB;&#x5316;</h4>
+<p>in-class&#x7684;&#x521D;&#x59CB;&#x5316;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>=</code>(&#x8D4B;&#x503C;&#x8BED;&#x53E5;)&#x6216;&#x8005;&#x5927;&#x62EC;&#x53F7;(&#x5C31;&#x662F;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;)&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;.</p>
+<pre><code>class Window_mgr {
+private:
+  std::vector&lt;Screen&gt; screens{Screen(24,80,&apos; &apos;) };
+};
+</code></pre><h3 id="732-&#x51FD;&#x6570;&#x8FD4;&#x56DE;this">7.3.2 &#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>*this</code></h3>
+<ul>
+<li>&#x5373;&#x4F7F;<code>*this</code>&#x672C;&#x8EAB;&#x4E0D;&#x662F;<code>const</code>&#x7684;,&#x5982;&#x679C;&#x4E00;&#x4E2A;<code>const</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>*this</code>,&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;<code>*this</code>&#x91CC;&#x9762;&#x7684;&#x53D8;&#x91CF;,&#x5305;&#x62EC;&#x5404;&#x79CD;<code>set()</code>&#x51FD;&#x6570;.</li>
+<li>&#x4E00;&#x4E2A;<code>const</code>&#x6210;&#x5458;&#x51FD;&#x6570;&#x8FD4;&#x56DE;<code>*this</code>,&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x5FC5;&#x987B;&#x662F; reference to <code>const</code>.</li>
+<li><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x662F;&#x5426;&#x662F;<code>const</code>&#x51FD;&#x6570;&#x6765;&#x91CD;&#x8F7D;&#x6210;&#x5458;&#x51FD;&#x6570;. &#x5176;&#x4E2D;,&#x5F53;&#x5BF9;&#x8C61;&#x4E3A;<code>const</code>&#x65F6;,&#x975E;<code>const</code>&#x7684;&#x51FD;&#x6570;&#x5C31;&#x4E0D;&#x53EF;&#x8BBF;&#x95EE;,&#x6B64;&#x65F6;&#x53EA;&#x80FD;&#x8C03;&#x7528;<code>const</code>&#x51FD;&#x6570;.</p>
+</li>
+<li><p>&#x5F53;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;&#x65F6;,&#x4F1A;&#x9690;&#x542B;&#x5730;&#x4F20;&#x9012;<code>this</code>&#x6307;&#x9488;. &#x5F53;&#x975E;<code>const</code>&#x8C03;&#x7528;<code>const</code>&#x51FD;&#x6570;&#x65F6;,<code>this</code>&#x6307;&#x9488;&#x4F1A;&#x6539;&#x53D8;&#x4E3A;<code>const</code>&#x7C7B;&#x578B;&#x518D;&#x4F20;&#x9012;&#x53C2;&#x6570;.</p>
+</li>
+<li>&#x5F53;&#x51FD;&#x6570;&#x5B8C;&#x6210;&#x8C03;&#x7528;&#x8FD4;&#x56DE;<code>*this</code>&#x65F6;,&#x975E;<code>const</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x975E;<code>const</code>&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;. <code>const</code>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6307;&#x5411;<code>const</code>&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;.</li>
+</ul>
+<h3 id="733-class-types">7.3.3 Class Types</h3>
+<p>&#x5F53;&#x53EA;&#x5B9A;&#x4E49;&#x7C7B;&#x540D;&#x4E0D;&#x5B9A;&#x4E49;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x65F6;,&#x4EC5;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x6307;&#x5411;&#x6B64;&#x7C7B;&#x7684;&#x6307;&#x9488;&#x6216;&#x5F15;&#x7528;,&#x4EE5;&#x53CA;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x8BE5;&#x7C7B;&#x7684;&#x51FD;&#x6570;.
+&#x4F46;&#x662F;&#x5F53;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x4E0A;&#x8FF0;&#x6307;&#x9488;&#x6216;&#x5F15;&#x7528;&#x7684;&#x5B9E;&#x4F53;&#x524D;,&#x5FC5;&#x987B;&#x5B9A;&#x4E49;&#x7C7B;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;.</p>
+<h3 id="734-&#x53CB;&#x5143;">7.3.4 &#x53CB;&#x5143;</h3>
+<h4 id="&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x53CB;&#x5143;&#x5173;&#x7CFB;">&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x53CB;&#x5143;&#x5173;&#x7CFB;</h4>
+<p>&#x4E00;&#x4E2A;&#x53CB;&#x5143;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5176;&#x53CB;&#x5143;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;, <strong>&#x5305;&#x62EC;&#x975E;<code>public</code>&#x51FD;&#x6570;</strong>.</p>
+<p>&#x53CB;&#x5143;&#x5C5E;&#x6027;&#x4E0D;&#x53EF;&#x4F20;&#x9012;: &#x7C7B;B&#x662F;&#x7C7B;A&#x7684;&#x53CB;&#x5143;&#x7C7B;, &#x7C7B;C&#x662F;&#x7C7B;B&#x7684;&#x53CB;&#x5143;&#x7C7B;,&#x90A3;&#x4E48;&#x7C7B;C&#x4E0D;&#x662F;&#x7C7B;A&#x7684;&#x53CB;&#x5143;.</p>
+<h4 id="&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x53CB;&#x5143;">&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;&#x53CB;&#x5143;</h4>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Screen {
+  <span class="hljs-comment">// &#x6B64;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#x5DF2;&#x58F0;&#x660E;&#x597D;.</span>
+  <span class="hljs-keyword">friend</span> <span class="hljs-keyword">void</span> Window_mgr::clear(ScreenIndex);
+  <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p>&#x5B9A;&#x4E49;&#x53CB;&#x5143;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x9075;&#x5B88;&#x4EE5;&#x4E0B;&#x987A;&#x5E8F;:</p>
+<ol>
+<li>&#x9996;&#x5148;&#x5B9A;&#x4E49;<code>Window_mgr</code>&#x7C7B;, &#x5E76;<strong>&#x58F0;&#x660E;</strong>&#x4F46;&#x4E0D;&#x5B9A;&#x4E49;<code>clear</code>&#x6210;&#x5458;&#x51FD;&#x6570;.</li>
+<li>&#x5B9A;&#x4E49;<code>screen</code>&#x7C7B;,&#x5305;&#x62EC;&#x4E0A;&#x9762;&#x7684;&#x53CB;&#x5143;&#x58F0;&#x660E;.</li>
+<li>&#x5B9A;&#x4E49;<code>clear</code>&#x51FD;&#x6570;,&#x5728;&#x8FD9;&#x65F6;&#x5B9A;&#x4E49;&#x624D;&#x4F1A;&#x540C;&#x65F6;&#x4F5C;&#x4E3A;Screen&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x770B;&#x5F85;.</li>
+</ol>
+<h4 id="&#x53CB;&#x5143;&#x4E0E;&#x91CD;&#x8F7D;&#x51FD;&#x6570;">&#x53CB;&#x5143;&#x4E0E;&#x91CD;&#x8F7D;&#x51FD;&#x6570;</h4>
+<p>&#x540C;&#x51FD;&#x6570;&#x540D;&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#x89C6;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;,&#x56E0;&#x6B64;&#x53CB;&#x5143;&#x58F0;&#x660E;&#x9700;&#x8981;&#x58F0;&#x660E;&#x6BCF;&#x4E00;&#x9879;&#x9700;&#x8981;&#x53CB;&#x5143;&#x7684;&#x51FD;&#x6570;.</p>
+<h4 id="&#x53CB;&#x5143;&#x58F0;&#x660E;&#x4E0E;&#x4F5C;&#x7528;&#x57DF;">&#x53CB;&#x5143;&#x58F0;&#x660E;&#x4E0E;&#x4F5C;&#x7528;&#x57DF;</h4>
+<p>&#x5373;&#x4F7F;&#x5728;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x53CB;&#x5143;&#x51FD;&#x6570;,&#x4E5F;&#x9700;&#x8981;&#x5728;&#x7C7B;&#x7684;&#x5916;&#x90E8;&#x63D0;&#x4F9B;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x5B9A;&#x4E49;.&#x53CB;&#x5143;&#x53EA;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x5173;&#x7CFB;,&#x5E76;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x672C;&#x8EAB;.
+<img src="resources/097036179151729F597C4610F4690813.jpg" alt="IMAGE"></p>
+<h2 id="74-&#x7C7B;&#x4F5C;&#x7528;&#x57DF;">7.4 &#x7C7B;&#x4F5C;&#x7528;&#x57DF;</h2>
+<p>&#x5728;&#x7C7B;&#x7684;&#x5916;&#x5934;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x65F6;, &#x56E0;&#x4E3A;&#x52A0;&#x4E86;<code>namespace</code>,&#x6240;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4EE5;&#x53CA;&#x51FD;&#x6570;&#x4F53;&#x5185;&#x90E8;, &#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x52A0;<code>namespace</code>&#x4E86;.</p>
+<p>&#x800C;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5728;&#x51FD;&#x6570;&#x540D;&#x4E4B;&#x524D;&#x51FA;&#x73B0;&#x7684;,&#x56E0;&#x6B64;&#x5B83;&#x5C5E;&#x4E8E;&#x7C7B;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4E4B;&#x5916;,&#x56E0;&#x6B64;&#x9700;&#x8981;&#x52A0;<code>namespace</code>.</p>
+<h3 id="741-name-lookup-and-class-scope">7.4.1 Name Lookup and Class Scope</h3>
+<p>&#x540D;&#x79F0;&#x67E5;&#x8BE2;(Name Lookup)&#x662F;&#x6307;&#x67E5;&#x627E;&#x4E0E;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x7684;&#x58F0;&#x660E;(declaration).</p>
+<p>&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x987A;&#x5E8F;&#x5982;&#x4E0B;:</p>
+<ol>
+<li>&#x7C7B;&#x6210;&#x5458;&#x5148;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</li>
+<li>&#x5728;&#x6574;&#x4E2A;&#x7C7B;&#x5B8C;&#x6574;&#x5730;&#x627E;&#x5230;&#x4E4B;&#x540E;,&#x624D;&#x4F1A;&#x7F16;&#x8BD1;&#x51FD;&#x6570;</li>
+</ol>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x51FD;&#x6570;&#x7684;&#x7F16;&#x8BD1;&#x6C38;&#x8FDC;&#x5728;&#x6210;&#x5458;&#x4E4B;&#x540E;.</p>
+<h4 id="&#x7C7B;&#x6210;&#x5458;&#x58F0;&#x660E;&#x65F6;&#x7684;-name-lookup">&#x7C7B;&#x6210;&#x5458;&#x58F0;&#x660E;&#x65F6;&#x7684; Name Lookup</h4>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x65F6;,&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x9996;&#x5148;&#x67E5;&#x627E;&#x7C7B;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;,&#x518D;&#x5BFB;&#x627E;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x7C7B;&#x578B;&#x5B9A;&#x4E49;.</p>
+<h4 id="&#x7C7B;&#x578B;&#x540D;&#x79F0;">&#x7C7B;&#x578B;&#x540D;&#x79F0;</h4>
+<p>&#x5F53;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x5916;&#x90E8;&#x548C;&#x5185;&#x90E8;&#x540C;&#x65F6;&#x5B9A;&#x4E49;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#x65F6;, &#x5728;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x5185;&#x90E8;, &#x5982;&#x679C;&#x5728;<code>typedef</code>&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x6B64;&#x7C7B;&#x578B;&#x540D;, &#x5219;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5916;&#x90E8;&#x7684;&#x7C7B;&#x578B;. &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;,&#x540E;&#x9762;&#x7684;<code>typedef</code>&#x8BED;&#x53E5;&#x662F;&#x4F1A;&#x5F15;&#x8D77;bug&#x7684;.</p>
+<ul>
+<li>&#x56E0;&#x6B64;, &#x7C7B;&#x4E2D;&#x7684;<code>typedef</code>&#x5E94;&#x5F53;&#x5728;&#x7C7B;&#x7684;&#x5F00;&#x5934;&#x5199;.</li>
+</ul>
+<h4 id="&#x7C7B;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x4EE3;&#x7801;&#x5757;">&#x7C7B;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x4EE3;&#x7801;&#x5757;</h4>
+<p>&#x67E5;&#x627E;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#x7684;&#x987A;&#x5E8F;&#x5982;&#x4E0B;:</p>
+<ol>
+<li>&#x5728;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4E2D;&#x67E5;&#x627E;, &#x53EA;&#x67E5;&#x627E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x540D;&#x8BED;&#x53E5;&#x7684;<strong>&#x4E0A;&#x6587;</strong>.</li>
+<li>&#x5728;&#x7C7B;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x67E5;&#x627E;, &#x5F53;&#x524D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x7684;<strong>&#x4E0A;&#x4E0B;&#x6587;</strong>&#x90FD;&#x8981;&#x67E5;&#x627E;.</li>
+<li><p>&#x67E5;&#x627E;&#x7C7B;&#x6240;&#x5728;&#x7684;<strong>&#x4E0A;&#x6587;</strong>&#x662F;&#x5426;&#x6709;&#x5B9A;&#x4E49;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x6307;&#x5B9A;&#x5916;&#x90E8;&#x7684;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;,&#x9700;&#x8981;&#x52A0;<code>namespace</code>.</p>
+</li>
+<li>&#x5EFA;&#x8BAE;&#x5C3D;&#x91CF;&#x4E0D;&#x91CD;&#x590D;&#x5B9A;&#x4E49;&#x76F8;&#x540C;&#x540D;&#x79F0;.</li>
+</ol>
+<h4 id="&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x4E4B;&#x540E;-&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x67E5;&#x627E;">&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x4E4B;&#x540E;, &#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x67E5;&#x627E;</h4>
+<p>&#x5BF9;&#x4E8E;&#x4EE3;&#x7801;&#x5757;&#x5916;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;:</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">int</span> height;
+<span class="hljs-keyword">class</span> Screen {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>::size_type pos;
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dummy_fcn</span><span class="hljs-params">(pos height)</span> </span>{
+    cursor = width * ::height; <span class="hljs-comment">// &#x5916;&#x90E8;&#x5168;&#x5C40;&#x7684;height</span>
+  }
+<span class="hljs-keyword">private</span>:
+  pos cursor = <span class="hljs-number">0</span>;
+  pos height = <span class="hljs-number">0</span>, width = <span class="hljs-number">0</span>;
+};
+</code></pre>
+<h4 id="&#x5F53;&#x7C7B;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x5916;&#x90E8;&#x5B9A;&#x4E49;&#x65F6;">&#x5F53;&#x7C7B;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x4EE3;&#x7801;&#x5757;&#x5916;&#x90E8;&#x5B9A;&#x4E49;&#x65F6;</h4>
+<p>&#x5F53;&#x7C7B;&#x6210;&#x5458;&#x5728;&#x7C7B;&#x7684;&#x5916;&#x90E8;&#x5B9A;&#x4E49;, &#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;&#x641C;&#x7D22;&#x987A;&#x5E8F;&#x7684;&#x7B2C;&#x4E09;&#x6B65;&#x589E;&#x52A0;&quot;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x6210;&#x5458;&#x51FD;&#x6570;&quot;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E0A;&#x4E0B;&#x6587;.</p>
+<h2 id="75-&#x6784;&#x9020;&#x5668;">7.5 &#x6784;&#x9020;&#x5668;</h2>
+<h3 id="&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;initializer-list">&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;(initializer list)</h3>
+<p>&#x5728;&#x6267;&#x884C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E4B;&#x524D;, &#x5728;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;(initializer list)&#x4E2D;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4F1A;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;, &#x5269;&#x4F59;&#x6210;&#x5458;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x503C;&#x6765;&#x521D;&#x59CB;&#x5316;&#x53D8;&#x91CF;.</p>
+<p>&#x56E0;&#x6B64;,&#x4E0B;&#x9762;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x5148;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x521D;&#x59CB;&#x5316;&#x6210;&#x5458;&#x53D8;&#x91CF;,&#x518D;&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x6765;&#x521D;&#x59CB;&#x5316;&#x6210;&#x5458;&#x53D8;&#x91CF;.&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x663E;&#x7136;&#x6BD4;&#x4F7F;&#x7528;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x6267;&#x884C;&#x7684;&#x6162;.</p>
+<pre><code class="lang-C++">Sals_data::Sales_data(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;s, <span class="hljs-keyword">unsigned</span> cnt, <span class="hljs-keyword">double</span> price){
+  bookNo = s;
+  units_sold = cnt;
+  revenue = cnt * prict;
+}
+</code></pre>
+<p>&#x53E6;&#x5916;,&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E0E;<code>std::initializer_list</code>&#x7684;&#x533A;&#x5206;, &#x540E;&#x8005;&#x662F;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x53EF;&#x53D8;&#x6570;&#x91CF;&#x4F20;&#x53C2;&#x7684;&#x6A21;&#x677F;&#x7C7B;.</p>
+<h4 id="&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6210;&#x5458;&#x7C7B;&#x578B;">&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#x7684;&#x6210;&#x5458;&#x7C7B;&#x578B;</h4>
+<ul>
+<li><code>const</code>&#x7C7B;&#x578B;</li>
+<li><code>reference</code></li>
+<li>&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7C7B;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;&#x4E0A;&#x8FF0;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x7684;&#x7C7B;&#x578B;, <strong>&#x5FC5;&#x987B;</strong>&#x4F7F;&#x7528;&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;(constructor initializer list)&#x6765;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;.</p>
+<h4 id="&#x6210;&#x5458;&#x521D;&#x59CB;&#x5316;&#x7684;&#x987A;&#x5E8F;">&#x6210;&#x5458;&#x521D;&#x59CB;&#x5316;&#x7684;&#x987A;&#x5E8F;</h4>
+<p>&#x521D;&#x59CB;&#x5316;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x7531;&#x7C7B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x7684;&#x987A;&#x5E8F;&#x800C;&#x5B9A;&#x7684;,&#x4E0E;&#x6784;&#x9020;&#x5668;&#x521D;&#x59CB;&#x5316;&#x5217;&#x8868;&#x7684;&#x987A;&#x5E8F;&#x65E0;&#x5173;.</p>
+<p>&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;,&#x5982;&#x679C;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x5316;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x503C;, &#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x5DF2;&#x7ECF;&#x521D;&#x59CB;&#x5316;. &#x56E0;&#x6B64;&#x6210;&#x5458;&#x7684;&#x58F0;&#x660E;&#x987A;&#x5E8F;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x9700;&#x8981;&#x6B63;&#x786E;&#x7684;&#x6392;&#x5E8F;.</p>
+<p>&#x5EFA;&#x8BAE;:</p>
+<ul>
+<li>&#x5728;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x6210;&#x5458;&#x5C3D;&#x91CF;&#x4E0E;&#x6210;&#x5458;&#x7684;&#x58F0;&#x660E;&#x987A;&#x5E8F;&#x76F8;&#x540C;.</li>
+<li>&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x6210;&#x5458;&#x76F8;&#x4E92;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;.</li>
+</ul>
+<h4 id="&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x548C;&#x6784;&#x9020;&#x5668;">&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#x548C;&#x6784;&#x9020;&#x5668;</h4>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../function/function.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Functions">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Classes","level":"1.2.3","depth":2,"previous":{"title":"Functions","level":"1.2.2","depth":2,"path":"cpp_primier/function/function.md","ref":"cpp_primier/function/function.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cpp_primier/classes/Classes.md","mtime":"2020-04-16T07:52:41.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T07:57:48.636Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
