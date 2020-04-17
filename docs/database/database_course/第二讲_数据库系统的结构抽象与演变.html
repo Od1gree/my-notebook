@@ -1,0 +1,837 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第二讲 数据库系统的结构抽象与演变 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第三讲_关系模型之基本概念.html" />
+    
+    
+    <link rel="prev" href="第一讲_初步认识数据库系统.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../cpp/">
+            
+                <a href="../../cpp/">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../cpp/cpp_primier/">
+            
+                <a href="../../cpp/cpp_primier/">
+            
+                    
+                    cpp_primier
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../cpp/cpp_primier/variables/Variables.html">
+            
+                <a href="../../cpp/cpp_primier/variables/Variables.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../cpp/cpp_primier/function/function.html">
+            
+                <a href="../../cpp/cpp_primier/function/function.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../cpp/cpp_primier/classes/Classes.html">
+            
+                <a href="../../cpp/cpp_primier/classes/Classes.html">
+            
+                    
+                    Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    本科课堂笔记
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="第一讲_初步认识数据库系统.html">
+            
+                <a href="第一讲_初步认识数据库系统.html">
+            
+                    
+                    第一讲 初步认识数据库系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.2" data-path="第二讲_数据库系统的结构抽象与演变.html">
+            
+                <a href="第二讲_数据库系统的结构抽象与演变.html">
+            
+                    
+                    第二讲 数据库系统的结构抽象与演变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="第三讲_关系模型之基本概念.html">
+            
+                <a href="第三讲_关系模型之基本概念.html">
+            
+                    
+                    第三讲 关系模型之基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="第四讲_关系模型之关系代数.html">
+            
+                <a href="第四讲_关系模型之关系代数.html">
+            
+                    
+                    第四讲 关系模型之关系代数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="第五讲_关系模型之关系演算.html">
+            
+                <a href="第五讲_关系模型之关系演算.html">
+            
+                    
+                    第五讲 关系模型之关系演算
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../miscellaneous/">
+            
+                <a href="../miscellaneous/">
+            
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../miscellaneous/从外部文件导入数据.html">
+            
+                <a href="../miscellaneous/从外部文件导入数据.html">
+            
+                    
+                    从外部导入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../miscellaneous/文本编码问题.html">
+            
+                <a href="../miscellaneous/文本编码问题.html">
+            
+                    
+                    数据库文本编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../draft.html">
+            
+                <a href="../draft.html">
+            
+                    
+                    未整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../tutorial/">
+            
+                <a href="../../tutorial/">
+            
+                    
+                    Tutorial
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../tutorial/notes/">
+            
+                <a href="../../tutorial/notes/">
+            
+                    
+                    文本编辑
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../../tutorial/notes/gitbook.html">
+            
+                <a href="../../tutorial/notes/gitbook.html">
+            
+                    
+                    在 github page 中添加 gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../tutorial/version_control/">
+            
+                <a href="../../tutorial/version_control/">
+            
+                    
+                    版本控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../tutorial/version_control/multi_Git_SSH.html">
+            
+                <a href="../../tutorial/version_control/multi_Git_SSH.html">
+            
+                    
+                    多github账号配置本地KEY
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../assembly/">
+            
+                <a href="../../assembly/">
+            
+                    
+                    汇编
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../assembly/notes.html">
+            
+                <a href="../../assembly/notes.html">
+            
+                    
+                    notes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../assembly/class_1.html">
+            
+                <a href="../../assembly/class_1.html">
+            
+                    
+                    class_2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../assembly/class_3.html">
+            
+                <a href="../../assembly/class_3.html">
+            
+                    
+                    class_3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../assembly/class_4.html">
+            
+                <a href="../../assembly/class_4.html">
+            
+                    
+                    class_4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../assembly/class_5.html">
+            
+                <a href="../../assembly/class_5.html">
+            
+                    
+                    class_5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../../assembly/class_6.html">
+            
+                <a href="../../assembly/class_6.html">
+            
+                    
+                    class_6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="../../assembly/class_7.html">
+            
+                <a href="../../assembly/class_7.html">
+            
+                    
+                    class_7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.7" data-path="../../assembly/class_8.html">
+            
+                <a href="../../assembly/class_8.html">
+            
+                    
+                    class_9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.8" data-path="../../assembly/class_11.html">
+            
+                <a href="../../assembly/class_11.html">
+            
+                    
+                    class_11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.9" data-path="../../assembly/class_13.html">
+            
+                <a href="../../assembly/class_13.html">
+            
+                    
+                    class_13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.10" data-path="../../assembly/register.html">
+            
+                <a href="../../assembly/register.html">
+            
+                    
+                    寄存器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.11" data-path="../../assembly/structure.html">
+            
+                <a href="../../assembly/structure.html">
+            
+                    
+                    程序结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第二讲 数据库系统的结构抽象与演变</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#x7ED3;&#x6784;">&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#x7ED3;&#x6784;</h1>
+<h2 id="dbms&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x4E09;&#x4E2A;&#x5C42;&#x6B21;">DBMS&#x7BA1;&#x7406;&#x6570;&#x636E;&#x7684;&#x4E09;&#x4E2A;&#x5C42;&#x6B21;</h2>
+<ol>
+<li>&#x5916;&#x90E8;(External)&#x5C42;&#x6B21;=&#x7528;&#x6237;&#x5C42;&#x6B21;: &#x67D0;&#x4E00;&#x7528;&#x6237;&#x80FD;&#x770B;&#x5230;&#x4E0E;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;,&#x5168;&#x5C40;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;</li>
+<li>&#x5168;&#x5C40;&#x5C42;&#x6B21;=&#x903B;&#x8F91;/&#x6982;&#x5FF5;(Conceptual)&#x5C42;&#x6B21;: &#x4ECE;&#x5168;&#x5C40;&#x89D2;&#x5EA6;&#x7406;&#x89E3;/&#x7BA1;&#x7406;&#x7684;&#x6570;&#x636E;,&#x542B;&#x76F8;&#x5E94;&#x5173;&#x8054;&#x7684;&#x7EA6;&#x675F;</li>
+<li>&#x5185;&#x90E8;(Internal)&#x5C42;&#x6B21;=&#x7269;&#x7406;&#x5C42;&#x6B21;: &#x5B58;&#x50A8;&#x5728;&#x4ECB;&#x8D28;&#x4E0A;&#x7684;&#x6570;&#x636E;,&#x542B;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;,&#x5B58;&#x50A8;&#x65B9;&#x5F0F;,&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#x7B49;.</li>
+</ol>
+<h3 id="&#x6570;&#x636E;&#x4E0E;&#x6A21;&#x5F0F;">&#x6570;&#x636E;&#x4E0E;&#x6A21;&#x5F0F;</h3>
+<ul>
+<li>&#x8868;&#x683C;&#x4E2D;&#x5C55;&#x73B0;&#x7684;&#x6570;&#x636E;--&#x89C6;&#x56FE;(View): &#x67D0;&#x4E00;&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#x4E0B;&#x8868;&#x73B0;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x6570;&#x636E;&#x7684;&#x7ED3;&#x6784;--&#x6A21;&#x5F0F;(Schema): &#x5BF9;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7684;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x6027;&#x63CF;&#x8FF0;,&#x6240;&#x89C2;&#x5BDF;&#x5230;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x6784;&#x4FE1;&#x606F;</li>
+</ul>
+<blockquote>
+<p>&#x5355;&#x7EAF;&#x8BA8;&#x8BBA;&#x6A21;&#x5F0F;,&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;&#x5168;&#x5C40;&#x6A21;&#x5F0F;;
+&#x5355;&#x7EAF;&#x8BA8;&#x8BBA;&#x89C6;&#x56FE;,&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;&#x5916;&#x89C6;&#x56FE;.</p>
+</blockquote>
+<h2 id="&#x4E09;&#x7EA7;&#x6A21;&#x5F0F;">&#x4E09;&#x7EA7;&#x6A21;&#x5F0F;</h2>
+<ul>
+<li>&#x5916;&#x6A21;&#x5F0F;/&#x5B50;&#x6A21;&#x5F0F;/&#x7528;&#x6237;&#x6A21;&#x5F0F;: &#x67D0;&#x4E00;&#x7528;&#x6237;&#x80FD;&#x591F;&#x770B;&#x5230;&#x4E0E;&#x5904;&#x7406;&#x7684;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;</li>
+<li>&#x6982;&#x5FF5;&#x6A21;&#x5F0F;/&#x5168;&#x5C40;&#x6A21;&#x5F0F;/&#x903B;&#x8F91;&#x6A21;&#x5F0F;: &#x4ECE;&#x5168;&#x5C40;&#x89D2;&#x5EA6;&#x7406;&#x89E3;/&#x7BA1;&#x7406;&#x7684;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;,&#x542B;&#x76F8;&#x5E94;&#x7684;&#x5173;&#x8054;&#x7EA6;&#x675F;</li>
+<li>&#x5185;&#x6A21;&#x5F0F;: &#x5B58;&#x5728;&#x4ECB;&#x8D28;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x7684;&#x7ED3;&#x6784;&#x63CF;&#x8FF0;,&#x542B;&#x5B58;&#x50A8;&#x8DEF;&#x5F84;,&#x5B58;&#x50A8;&#x65B9;&#x5F0F;,&#x7D22;&#x5F15;&#x65B9;&#x5F0F;&#x7B49;.</li>
+</ul>
+<h2 id="&#x4E24;&#x5C42;&#x6620;&#x50CF;">&#x4E24;&#x5C42;&#x6620;&#x50CF;</h2>
+<ul>
+<li>E-C Mapping: &#x5C06;&#x5916;&#x6A21;&#x5F0F;&#x6620;&#x5C04;&#x4E3A;&#x6982;&#x5FF5;&#x6A21;&#x5F0F;,&#x4FBF;&#x4E8E;&#x7528;&#x6237;&#x89C2;&#x5BDF;&#x4F7F;&#x7528;</li>
+<li>C-I Mapping: &#x5C06;&#x6982;&#x5FF5;&#x6A21;&#x5F0F;&#x6620;&#x5C04;&#x4E3A;&#x5185;&#x6A21;&#x5F0F;,&#x4FBF;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x5B58;&#x50A8;&#x5904;&#x7406;</li>
+</ul>
+<p><img src="resources/797DC8B3EC0338868ECBAFCAB2749097.jpg" alt="IMAGE"></p>
+<h2 id="&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x6027;">&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x6027;</h2>
+<ul>
+<li>&#x903B;&#x8F91;&#x6570;&#x636E;&#x72EC;&#x7ACB;&#x6027;: &#x5F53;&#x6982;&#x5FF5;&#x6A21;&#x5F0F;&#x53D8;&#x5316;&#x65F6;,&#x53EF;&#x4EE5;&#x4E0D;&#x6539;&#x53D8;&#x5916;&#x90E8;&#x6A21;&#x5F0F;(&#x53EA;&#x6539;E-C&#x6620;&#x50CF;),&#x4ECE;&#x800C;&#x65E0;&#x9700;&#x6539;&#x53D8;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</li>
+<li>&#x7269;&#x7406;&#x6570;&#x636E;&#x72EC;&#x7ACB;&#x6027;: &#x5F53;&#x5185;&#x90E8;&#x6A21;&#x5F0F;&#x53D8;&#x5316;&#x65F6;,&#x53EF;&#x4EE5;&#x4E0D;&#x6539;&#x53D8;&#x6982;&#x5FF5;&#x6A21;&#x5F0F;(&#x53EA;&#x6539;C-I&#x6620;&#x50CF;),&#x4ECE;&#x800C;&#x4E0D;&#x6539;&#x53D8;&#x5916;&#x90E8;&#x6A21;&#x5F0F;</li>
+</ul>
+<h1 id="&#x6570;&#x636E;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x6A21;&#x578B;</h1>
+<h2 id="&#x6570;&#x636E;&#x6A21;&#x578B;&#x6A21;&#x5F0F;&#x6570;&#x636E;-&#x7684;&#x5173;&#x7CFB;">&#x6570;&#x636E;&#x6A21;&#x578B;,&#x6A21;&#x5F0F;,&#x6570;&#x636E; &#x7684;&#x5173;&#x7CFB;</h2>
+<h3 id="&#x6570;&#x636E;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x6A21;&#x578B;</h3>
+<ul>
+<li>&#x89C4;&#x5B9A;&#x6A21;&#x5F0F;&#x7EDF;&#x4E00;&#x63CF;&#x8FF0;&#x65B9;&#x5F0F;&#x7684;&#x6A21;&#x578B;.&#x4E09;&#x8981;&#x7D20;&#x5305;&#x62EC;:&#x6570;&#x636E;&#x7ED3;&#x6784;,&#x64CD;&#x4F5C;&#x548C;&#x7EA6;&#x675F;</li>
+<li><strong>&#x6570;&#x636E;&#x6A21;&#x578B;</strong>&#x662F;&#x5BF9;<strong>&#x6A21;&#x5F0F;</strong>&#x672C;&#x8EAB;&#x7684;&#x62BD;&#x8C61;,<strong>&#x6A21;&#x5F0F;</strong>&#x662F;&#x5BF9;<strong>&#x6570;&#x636E;&#x672C;&#x8EAB;</strong>&#x7ED3;&#x6784;&#x5F62;&#x5F0F;&#x7684;&#x62BD;&#x8C61;<blockquote>
+<p>&#x5173;&#x7CFB;&#x6A21;&#x578B;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x6A21;&#x578B;,&#x9075;&#x5FAA;&#x5173;&#x7CFB;&#x6A21;&#x578B;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x79F0;&#x4E3A;&#x6A21;&#x5F0F;,&#x8868;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x79F0;&#x4E3A;&#x6570;&#x636E;</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="&#x4E09;&#x5927;&#x7ECF;&#x5178;&#x6570;&#x636E;&#x6A21;&#x578B;">&#x4E09;&#x5927;&#x7ECF;&#x5178;&#x6570;&#x636E;&#x6A21;&#x578B;</h3>
+<ul>
+<li>&#x5173;&#x7CFB;&#x6A21;&#x578B;:&#x8868;</li>
+<li>&#x5C42;&#x6B21;&#x6A21;&#x578B;:&#x6811;,<font color="red">&#x5305;&#x62EC;&#x8BB0;&#x5F55;&#x53CA;&#x8BB0;&#x5F55;&#x4E4B;&#x95F4;&#x7684;&#x6307;&#x9488;</font></li>
+<li>&#x7F51;&#x72B6;&#x6A21;&#x578B;:&#x56FE;</li>
+</ul>
+<h1 id="&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x7684;&#x6F14;&#x53D8;&#x4E0E;&#x53D1;&#x5C55;">&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x7684;&#x6F14;&#x53D8;&#x4E0E;&#x53D1;&#x5C55;</h1>
+<h2 id="&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5230;&#x6570;&#x636E;&#x5E93;">&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5230;&#x6570;&#x636E;&#x5E93;</h2>
+<ul>
+<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;: &#x6570;&#x636E;&#x5B58;&#x53D6;&#x4EE5;&#x8BB0;&#x5F55;&#x4E3A;&#x5355;&#x4F4D;,&#x4E0D;&#x7528;&#x8003;&#x8651;&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x7684;&#x7269;&#x7406;&#x7EC6;&#x8282;,&#x6446;&#x8131;&#x5BF9;&#x7269;&#x7406;&#x8BBE;&#x5907;&#x5B58;&#x53D6;&#x7684;&#x590D;&#x6742;&#x8D1F;&#x62C5;;&#x4E0D;&#x8DB3;&#x4E4B;&#x5904;&#x662F;&#x6570;&#x636E;&#x4E0E;&#x7A0B;&#x5E8F;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;,&#x6570;&#x636E;&#x7684;&#x7EC4;&#x7EC7;&#x4F9D;&#x8D56;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;.</li>
+<li>&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;: &#x7531;DBMS&#x7BA1;&#x7406;,&#x8F83;&#x5F3A;&#x5730;&#x72EC;&#x7ACB;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;.&#x6570;&#x636E;&#x5B58;&#x53D6;&#x4EE5;&#x8BB0;&#x5F55;/&#x6570;&#x636E;&#x9879;/&#x8BB0;&#x5F55;&#x96C6;&#x5408;&#x4E3A;&#x5355;&#x4F4D;;&#x7EDF;&#x4E00;&#x7684;&#x6570;&#x636E;&#x63A7;&#x5236;&#x529F;&#x80FD;,&#x5171;&#x4EAB;&#x5EA6;&#x9AD8;;&#x5197;&#x4F59;&#x5C0F;,&#x4FBF;&#x4E8E;&#x67E5;&#x8BE2;.</li>
+</ul>
+<h2 id="&#x4ECE;&#x5C42;&#x6B21;&#x6A21;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7F51;&#x72B6;&#x6A21;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5230;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7B2C;&#x4E00;&#x4EE3;&#x5230;&#x7B2C;&#x4E8C;&#x4EE3;">&#x4ECE;&#x5C42;&#x6B21;&#x6A21;&#x578B;&#x6570;&#x636E;&#x5E93;,&#x7F51;&#x72B6;&#x6A21;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5230;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;(&#x7B2C;&#x4E00;&#x4EE3;&#x5230;&#x7B2C;&#x4E8C;&#x4EE3;)</h2>
+<ul>
+<li>&#x5C42;&#x6B21;&#x6A21;&#x578B;&#x4E0E;&#x7F51;&#x72B6;&#x6A21;&#x578B;<ul>
+<li>&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x5173;&#x8054;&#x7531;&#x7528;&#x6237;&#x5EFA;&#x7ACB;&#x7684;&#x590D;&#x6742;&#x7684;&#x6307;&#x9488;&#x7CFB;&#x7EDF;&#x6765;&#x7EF4;&#x7CFB;,&#x7ED3;&#x6784;&#x590D;&#x6742;</li>
+<li>&#x6570;&#x636E;&#x68C0;&#x7D22;&#x4F9D;&#x8D56;&#x7531;&#x6307;&#x9488;&#x7CFB;&#x7EDF;&#x6307;&#x793A;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x9010;&#x4E00;&#x8BB0;&#x5F55;&#x7684;&#x64CD;&#x4F5C;,&#x4E0D;&#x80FD;&#x6709;&#x6548;&#x652F;&#x6301;&#x8BB0;&#x5F55;&#x96C6;&#x5408;&#x7684;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+<li>&#x5173;&#x7CFB;&#x6A21;&#x578B;&#x6570;&#x636E;&#x5E93;<ul>
+<li>&#x5173;&#x7CFB;&#x7531;Table&#x7684;&#x5C5E;&#x6027;&#x6765;&#x8868;&#x5F81;,&#x7ED3;&#x6784;&#x7B80;&#x5355;</li>
+<li>&#x6570;&#x636E;&#x68C0;&#x7D22;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x8DEF;&#x5F84;&#x4FE1;&#x606F;&#x6216;&#x8FC7;&#x7A0B;&#x4FE1;&#x606F;,&#x652F;&#x6301;&#x975E;&#x8FC7;&#x7A0B;&#x5316;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;.</li>
+<li>&#x6709;&#x6548;&#x652F;&#x6301;&#x8BB0;&#x5F55;&#x96C6;&#x5408;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x8F83;&#x4E3A;&#x5B8C;&#x5584;&#x7684;&#x7406;&#x8BBA;&#x57FA;&#x7840;</li>
+<li>&#x6D88;&#x9664;&#x4E86;&#x7528;&#x6237;&#x5EFA;&#x7ACB;&#x7684;&#x6307;&#x9488;&#x7CFB;&#x7EDF;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x7531;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5230;&#x5BF9;&#x8C61;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x5E93;">&#x7531;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5230;&#x5BF9;&#x8C61;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;,&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x5E93;</h2>
+<ul>
+<li>&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;<ul>
+<li>&#x6309;&#x884C;&#x6309;&#x5217;&#x5F62;&#x5F0F;&#x7EC4;&#x7EC7;&#x6570;&#x636E;: &#x5173;&#x7CFB;&#x7684;1&#x8303;&#x5F0F;</li>
+<li>&#x6570;&#x636E;&#x4E0D;&#x53EF;&#x518D;&#x5206;</li>
+<li>&#x5173;&#x7CFB;&#x8FD0;&#x7B97;: &#x5173;&#x7CFB;&#x4EE3;&#x6570;,&#x5143;&#x7EC4;&#x6F14;&#x7B97;,&#x57DF;&#x6F14;&#x7B97; -&gt; &#x6807;&#x51C6;SQL</li>
+<li>&#x5173;&#x7CFB;&#x8BBE;&#x8BA1;&#x7406;&#x8BBA;</li>
+</ul>
+</li>
+<li>&#x5BF9;&#x8C61;-&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;<ul>
+<li>&#x53EF;&#x6709;&#x6548;&#x652F;&#x6301;&#x4E0D;&#x6EE1;&#x8DB3;&#x5173;&#x7CFB;&#x7B2C;1&#x8303;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x9879;</li>
+<li>&#x4EE5;&#x5BF9;&#x8C61;&#x6765;&#x5C01;&#x88C5;&#x9700;&#x5206;&#x89E3;&#x7684;&#x6570;&#x636E;&#x9879;</li>
+<li>&#x884C;&#x5BF9;&#x8C61;&#x4E0E;&#x5217;&#x5BF9;&#x8C61;:&#x805A;&#x96C6;&#x5BF9;&#x8C61;&#x4E0E;&#x7ED3;&#x6784;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x6570;&#x636E;&#x5E93;<ul>
+<li>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x6280;&#x672F;&#x4E0E;&#x96C6;&#x5408;/&#x805A;&#x96C6;&#x64CD;&#x4F5C;&#x6280;&#x672F;(SQL)&#x7684;&#x7ED3;&#x5408;</li>
+<li>&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x652F;&#x6301;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x5F81;</li>
+</ul>
+</li>
+<li>XML&#x6570;&#x636E;&#x5E93;<ul>
+<li>&#x662F;&#x6570;&#x636E;&#x5E93;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x5F62;&#x5F0F;,&#x88AB;&#x79F0;&#x4E3A;&#x534A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x5E93;</li>
+<li>&#x6570;&#x636E;&#x4E0E;&#x6570;&#x636E;&#x7684;&#x8BED;&#x4E49;&#x5408;&#x5E76;&#x5728;&#x4E00;&#x8D77;&#x5B58;&#x50A8;&#x548C;&#x5904;&#x7406;</li>
+<li>&#x9762;&#x5411;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x800C;&#x63D0;&#x51FA;,&#x5728;&#x4E92;&#x8054;&#x7F51;&#x4E16;&#x754C;&#x5F97;&#x5230;&#x5E94;&#x7528;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x7531;&#x591A;&#x79CD;&#x6570;&#x636E;&#x5E93;&#x5230;&#x591A;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x653E;&#x5F0F;&#x4E92;&#x8054;">&#x7531;&#x591A;&#x79CD;&#x6570;&#x636E;&#x5E93;&#x5230;&#x591A;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x653E;&#x5F0F;&#x4E92;&#x8054;</h2>
+<ul>
+<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x6570;&#x636E;&#x4E92;&#x8054;&#x63A5;&#x53E3;(Open DataBase Connection)</li>
+<li>ODBC&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x5E93;&#x6765;&#x8FDB;&#x884C;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;</li>
+</ul>
+<h2 id="&#x5148;&#x8FDB;&#x7684;&#x65B0;&#x578B;&#x6570;&#x636E;&#x5E93;">&#x5148;&#x8FDB;&#x7684;&#x65B0;&#x578B;&#x6570;&#x636E;&#x5E93;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第一讲_初步认识数据库系统.html" class="navigation navigation-prev " aria-label="Previous page: 第一讲 初步认识数据库系统">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第三讲_关系模型之基本概念.html" class="navigation navigation-next " aria-label="Next page: 第三讲 关系模型之基本概念">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第二讲 数据库系统的结构抽象与演变","level":"1.3.1.2","depth":3,"next":{"title":"第三讲 关系模型之基本概念","level":"1.3.1.3","depth":3,"path":"database/database_course/第三讲_关系模型之基本概念.md","ref":"database/database_course/第三讲_关系模型之基本概念.md","articles":[]},"previous":{"title":"第一讲 初步认识数据库系统","level":"1.3.1.1","depth":3,"path":"database/database_course/第一讲_初步认识数据库系统.md","ref":"database/database_course/第一讲_初步认识数据库系统.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"database/database_course/第二讲_数据库系统的结构抽象与演变.md","mtime":"2020-04-17T00:20:22.657Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-17T01:39:07.370Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
